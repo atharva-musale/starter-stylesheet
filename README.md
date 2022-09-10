@@ -1,1 +1,1 @@
-###Stylesheet starter
+Stylesheet starter
