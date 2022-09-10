@@ -1,0 +1,147 @@
+/* imported fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* reset stuff */
+*,
+::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-nav: rgba(0, 214, 170, 0.8);
+  --bg-black: #161819;
+  --bg-gray: #eaecef;
+  --text-gray: #3e4147;
+  --text-orange-light: #e36e40;
+  --text-orange-dark: #cc4425;
+  --text-white: #ffffff;
+  --text-blue: #8ef2ff;
+  --bg-purple: #694d75;
+  --bg-blue: #407899;
+}
+
+/* layout */
+.container {
+  width: min(45rem, 80%);
+  padding: 2rem;
+  background-color: var(--bg-gray);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+  margin: 3rem auto;
+}
+
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Playfair Display", serif;
+}
+
+p,
+a,
+span,
+li {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 0.3px;
+  line-height: 23px;
+}
+
+/* navbar */
+header {
+  background-color: var(--bg-nav);
+  padding: 0.3rem 4rem;
+}
+
+.logo {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid black;
+}
+.logo:hover {
+  background-color: black;
+  color: var(--text-white);
+  cursor: pointer;
+  transition: ease-in-out 400ms;
+}
+
+nav {
+	font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-grow: 1;
+  font-weight: 400;
+  padding: 0.3rem 0;
+  text-transform: uppercase;
+}
+
+nav ul {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+}
+
+nav li {
+  list-style: none;
+  margin-left: 1rem;
+}
+
+nav li a {
+  position: relative;
+  text-decoration: none;
+  padding: 0.2rem;
+  color: black;
+}
+
+nav li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  left: 0;
+  right: 0;
+  bottom: -0.3rem;
+  opacity: 0;
+}
+nav li a:hover::after {
+  cursor: pointer;
+  opacity: 1;
+  transition: ease-in-out 400ms;
+}
+
+/* Buttons */
+.btn {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  color: white;
+  transition: all ease-in-out 400ms;
+}
+
+.btn-orange {
+  background: var(--text-orange-light);
+  border: 1px solid var(--text-orange-light);
+}
+.btn-orange:hover {
+  cursor: pointer;
+  background: var(--text-orange-dark);
+  border: 1px solid var(--text-orange-dark);
+}
+
+.btn-orange-outline {
+  background: transparent;
+  color: var(--text-orange-dark);
+  border: 1px solid var(--text-orange-dark);
+}
+.btn-orange-outline:hover {
+  cursor: pointer;
+  background: var(--text-orange-dark);
+  color: white;
+}
