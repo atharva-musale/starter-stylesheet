@@ -1,10 +1,74 @@
-/* imported fonts */
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+// Imported fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-/* reset stuff */
+// SCSS Variables
+// Colors
+$white: #FFFFFF;
+$black: #000000;
+
+$gray-100: #EAECEF;
+$gray-200: #3E4147;
+$gray-300: #161819;
+
+$orange-100: #E36E40;
+$orange-200: #CC4425;
+$orange-300: #9e2e15;
+
+$blue-100: #8EF2FF;
+$blue-200: #407899;
+$blue-300: #204051;
+
+$purple-100: #9B7AA0;
+$purple-200: #694D75;
+$purple-300: #4B3652;
+
+$error: #DC3545;
+$success: #28A745;
+$warning: #FFC107;
+
+$accent: rgba(0, 214, 170, 0.8);
+
+// Typography
+$font-playfair: 'Playfair Display', serif;
+$font-georgia: Georgia, 'Times New Roman', Times, serif;
+$font-raleway: 'Raleway', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$font-outfit: 'Outfit', sans-serif;
+
+// Spacing
+$spacing-xs: 0.2rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+// Transitions
+$transition-fast: 200ms ease-in-out;
+$transition-normal: 300ms ease-in-out;
+
+// Mixins
+@mixin button-base {
+  font-family: $font-raleway;
+  text-transform: uppercase;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  color: $white;
+  transition: all $transition-normal;
+  cursor: pointer;
+}
+
+@mixin hover-effect($bg-color, $border-color: $bg-color) {
+  &:hover {
+    background: $bg-color;
+    border: 1px solid $border-color;
+  }
+}
+
+// Reset
 *,
 ::after,
 *::before {
@@ -13,135 +77,186 @@
   box-sizing: border-box;
 }
 
-:root {
-  --bg-nav: rgba(0, 214, 170, 0.8);
-  --bg-black: #161819;
-  --bg-gray: #eaecef;
-  --text-gray: #3e4147;
-  --text-orange-light: #e36e40;
-  --text-orange-dark: #cc4425;
-  --text-white: #ffffff;
-  --text-blue: #8ef2ff;
-  --bg-purple: #694d75;
-  --bg-blue: #407899;
+// Sets 1rem to 10px
+html {
+  font-size: 62.5%;
 }
 
-/* layout */
+// Layout
 .container {
-  width: min(45rem, 80%);
-  padding: 2rem;
-  background-color: var(--bg-gray);
+  width: min(50rem, 90%);
+  padding: $spacing-xl;
+  background-color: $gray-100;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-  margin: 3rem auto;
+  margin: $spacing-xxl auto;
 }
 
-/* typography */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Playfair Display", serif;
+// Typography
+%heading-base {
+  font-family: $font-playfair;
+  margin-bottom: $spacing-md;
 }
 
-p,
-a,
-span,
-li {
-  font-family: Georgia, "Times New Roman", Times, serif;
+h1, h2, h3, h4, h5 {
+  @extend %heading-base;
+}
+
+p, a, span, li {
+  font-family: $font-georgia;
   letter-spacing: 0.3px;
   line-height: 23px;
 }
 
-/* navbar */
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+// Navigation
 header {
-  background-color: var(--bg-nav);
-  padding: 0.3rem 4rem;
+  background-color: $accent;
+  padding: $spacing-md $spacing-xl;
 }
 
 .logo {
-  padding: 0.3rem 0.6rem;
-  border: 1px solid black;
-}
-.logo:hover {
-  background-color: black;
-  color: var(--text-white);
-  cursor: pointer;
-  transition: ease-in-out 400ms;
+  padding: $spacing-md $spacing-xl;
+  border: 1px solid $black;
+  
+  &:hover {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+    transition: $transition-normal;
+  }
 }
 
 nav {
-	font-family: 'Raleway', sans-serif;
+  font-family: $font-raleway;
   display: flex;
   flex-grow: 1;
   font-weight: 400;
-  padding: 0.3rem 0;
+  padding: $spacing-md 0;
   text-transform: uppercase;
+
+  ul {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  li {
+    list-style: none;
+    margin-left: $spacing-lg;
+
+    a {
+      position: relative;
+      text-decoration: none;
+      padding: $spacing-sm;
+      color: $black;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: $black;
+        left: 0;
+        right: 0;
+        bottom: -0.3rem;
+        opacity: 0;
+        transition: opacity $transition-normal;
+      }
+
+      &:hover {
+        cursor: pointer;
+        
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
-nav ul {
-  display: flex;
-  margin-left: auto;
-  align-items: center;
-}
-
-nav li {
-  list-style: none;
-  margin-left: 1rem;
-}
-
-nav li a {
-  position: relative;
-  text-decoration: none;
-  padding: 0.2rem;
-  color: black;
-}
-
-nav li a::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 3px;
-  background-color: black;
-  left: 0;
-  right: 0;
-  bottom: -0.3rem;
-  opacity: 0;
-}
-nav li a:hover::after {
-  cursor: pointer;
-  opacity: 1;
-  transition: ease-in-out 400ms;
-}
-
-/* Buttons */
+// Buttons
 .btn {
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-  padding: 0.3rem 0.7rem;
+  @include button-base;
+
+  &-orange {
+    background: $orange-100;
+    border: 1px solid $orange-100;
+    
+    @include hover-effect($orange-200);
+  }
+
+  &-orange-outline {
+    background: transparent;
+    color: $orange-200;
+    border: 1px solid $orange-200;
+    
+    &:hover {
+      background: $orange-200;
+      color: $white;
+    }
+  }
+}
+
+.buttons-place {
+  display: flex;
+  gap: $spacing-md;
+  margin-top: $spacing-md;
+}
+
+// Form elements
+%form-input-base {
   border: none;
-  color: white;
-  transition: all ease-in-out 400ms;
+  font-size: 1.4rem;
+  font-family: $font-raleway;
+  border-radius: 0.3rem;
+  padding: $spacing-xs 0.4rem;
 }
 
-.btn-orange {
-  background: var(--text-orange-light);
-  border: 1px solid var(--text-orange-light);
-}
-.btn-orange:hover {
-  cursor: pointer;
-  background: var(--text-orange-dark);
-  border: 1px solid var(--text-orange-dark);
+input, select {
+  @extend %form-input-base;
+  outline: 1px solid $gray-200;
+
+  &:focus {
+    outline: 2px solid $blue-200;
+  }
+
+  &.error {
+    outline: 2px solid $error;
+  }
 }
 
-.btn-orange-outline {
-  background: transparent;
-  color: var(--text-orange-dark);
-  border: 1px solid var(--text-orange-dark);
+.form-item {
+  margin: $spacing-md 0;
+  display: flex;
+  align-items: center;
+
+  label {
+    flex-basis: 15%;
+  }
+
+  input, select {
+    width: 25rem;
+  }
 }
-.btn-orange-outline:hover {
-  cursor: pointer;
-  background: var(--text-orange-dark);
-  color: white;
+
+.validation-error {
+  color: $error;
+  font-size: 1rem;
+  margin-left: 15%;
+  margin-top: -$spacing-md;
 }
