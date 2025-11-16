@@ -53,11 +53,17 @@ html {
 
 /* layout */
 .container {
-  width: min(50rem, 90%);
-  padding: 2rem;
+  width: min(80rem, 90%);
+  padding: 3rem;
   background-color: var(--gray-100);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-  margin: 3rem auto;
+  margin: 5rem auto;
+}
+
+.highlight-text {
+  border-left: 0.3rem solid var(--orange-100);
+  padding-left: 2rem;
+  margin: 1rem 0;
 }
 
 /* typography */
@@ -69,22 +75,23 @@ p, a, span, li {
   font-family: var(--font-georgia);
   letter-spacing: 0.3px;
   line-height: 23px;
+  font-size: 1.6rem;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1rem;
 }
@@ -92,18 +99,19 @@ h3 {
 /* navbar */
 header {
   background-color: var(--accent);
-  padding: 1rem 2rem;
 }
 
 .logo {
-  padding: 1rem 2rem;
+  font-family: var(--font-raleway);
+  font-size: 1.6rem;
+  padding: 0.6rem 1.5rem;
   border: 1px solid var(--black);
 }
 .logo:hover {
   background-color: var(--black);
   color: var(--white);
   cursor: pointer;
-  transition: ease-in-out 400ms;
+  transition: ease-in-out 200ms;
 }
 
 nav {
@@ -111,22 +119,27 @@ nav {
   display: flex;
   flex-grow: 1;
   font-weight: 400;
-  padding: 1rem 0;
   text-transform: uppercase;
+
+  width: min(80rem, 90%);
+  padding: 1.5rem;
+  margin: auto;
 }
 
 nav ul {
   display: flex;
   margin-left: auto;
   align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 nav li {
   list-style: none;
-  margin-left: 1.5rem;
 }
 
 nav li a {
+  font-family: var(--font-raleway);
   position: relative;
   text-decoration: none;
   padding: 0.5rem;
@@ -148,17 +161,18 @@ nav li a::after {
 nav li a:hover::after {
   cursor: pointer;
   opacity: 1;
-  transition: ease-in-out 400ms;
+  transition: ease-in-out 200ms;
 }
 
 /* Buttons */
 .btn {
   font-family: var(--font-raleway);
+  font-size: 1.6rem;
   text-transform: uppercase;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.4rem;
   border: none;
   color: var(--white);
-  transition: all ease-in-out 400ms;
+  transition: all ease-in-out 200ms;
 }
 
 .btn-orange {
@@ -184,8 +198,8 @@ nav li a:hover::after {
 
 .buttons-place {
   display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 /* form elements */
