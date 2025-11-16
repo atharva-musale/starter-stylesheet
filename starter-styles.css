@@ -1,8 +1,6 @@
 /* imported fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
@@ -45,6 +43,12 @@ html {
   --warning: #FFC107;
 
   --accent: rgba(0, 214, 170, 0.8);
+
+  --font-playfair-display: 'Playfair Display', serif;
+  --font-georgia: Georgia, 'Times New Roman', Times, serif;
+  --font-raleway: 'Raleway', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
 }
 
 /* layout */
@@ -58,11 +62,11 @@ html {
 
 /* typography */
 h1, h2, h3, h4, h5 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--font-playfair-display);
 }
 
 p, a, span, li {
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: var(--font-georgia);
   letter-spacing: 0.3px;
   line-height: 23px;
 }
@@ -103,7 +107,7 @@ header {
 }
 
 nav {
-	font-family: 'Raleway', sans-serif;
+	font-family: var(--font-raleway);
   display: flex;
   flex-grow: 1;
   font-weight: 400;
@@ -149,7 +153,7 @@ nav li a:hover::after {
 
 /* Buttons */
 .btn {
-  font-family: "Raleway", sans-serif;
+  font-family: var(--font-raleway);
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   border: none;
@@ -176,4 +180,48 @@ nav li a:hover::after {
   cursor: pointer;
   background: var(--orange-200);
   color: var(--white);
+}
+
+.buttons-place {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* form elements */
+input, select {
+  border: none;
+  font-size: 1.4rem;
+  font-family: var(--font-raleway);
+  border-radius: 0.3rem;
+  outline: 1px solid var(--text-gray);
+  padding: 0.2rem 0.4rem;
+}
+input:focus, select:focus {
+  outline: 2px solid var(--bg-blue);
+}
+
+input.error, select.error {
+  outline: 2px solid var(--error);
+}
+
+.form-item {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.form-item label {
+  flex-basis: 15%;
+}
+
+.form-item input, .form-item select {
+  width: 25rem;
+}
+
+.validation-error {
+  color: var(--error);
+  font-size: 1rem;
+  margin-left: 15%;
+  margin-top: -1rem;
 }
