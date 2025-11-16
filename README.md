@@ -32,29 +32,6 @@ A comprehensive CSS starter kit with modern styling patterns, CSS custom propert
 #### Color Variables
 
 | Variable | Value | Description |
-|----------|-------|-------------|
-| `--white` | `#FFFFFF` | Pure white |
-| `--black` | `#000000` | Pure black |
-| `--gray-100` | `#EAECEF` | Light gray |
-| `--gray-200` | `#3E4147` | Medium gray |
-| `--gray-300` | `#161819` | Dark gray |
-| `--orange-100` | `#E36E40` | Light orange |
-| `--orange-200` | `#CC4425` | Medium orange |
-| `--orange-300` | `#9E2E15` | Dark orange |
-| `--blue-100` | `#8EF2FF` | Light blue |
-| `--blue-200` | `#407899` | Medium blue |
-| `--blue-300` | `#204051` | Dark blue |
-| `--purple-100` | `#9B7AA0` | Light purple |
-| `--purple-200` | `#694D75` | Medium purple |
-| `--purple-300` | `#4B3652` | Dark purple |
-| `--error` | `#DC3545` | Error red |
-| `--success` | `#28A745` | Success green |
-| `--warning` | `#FFC107` | Warning yellow |
-| `--accent` | `rgba(0, 214, 170, 0.8)` | Primary accent color |
-
-#### Color Variables
-
-| Variable | Value | Description |
 |----------|-------|-----------|
 | `--white` | `#FFFFFF` | Pure white |
 | `--black` | `#000000` | Pure black |
@@ -111,29 +88,29 @@ A comprehensive CSS starter kit with modern styling patterns, CSS custom propert
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="starter-styles.css">
+  <link rel="stylesheet" href="starter-styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Your Logo</div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">Your Logo</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>Main Heading</h1>
+    <p>Your content here...</p>
     
-    <div class="container">
-        <h1>Main Heading</h1>
-        <p>Your content here...</p>
-        
-        <div class="buttons-place">
-            <button class="btn btn-orange">Primary Action</button>
-            <button class="btn btn-orange-outline">Secondary Action</button>
-        </div>
+    <div class="buttons-place">
+      <button class="btn btn-orange">Primary Action</button>
+      <button class="btn btn-orange-outline">Secondary Action</button>
     </div>
+  </div>
 </body>
 </html>
 ```
@@ -142,16 +119,16 @@ A comprehensive CSS starter kit with modern styling patterns, CSS custom propert
 
 ```html
 <form>
-    <div class="form-item">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
-    </div>
-    <div class="validation-error">Please enter a valid name</div>
-    
-    <div class="form-item">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" class="error">
-    </div>
+  <div class="form-item">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+  </div>
+  <div class="validation-error">Please enter a valid name</div>
+  
+  <div class="form-item">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" class="error">
+  </div>
 </form>
 ```
 
