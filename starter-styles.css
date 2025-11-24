@@ -117,7 +117,6 @@ header {
 nav {
 	font-family: var(--font-raleway);
   display: flex;
-  flex-grow: 1;
   font-weight: 400;
   text-transform: uppercase;
 
@@ -208,11 +207,11 @@ input, select {
   font-size: 1.4rem;
   font-family: var(--font-raleway);
   border-radius: 0.3rem;
-  outline: 1px solid var(--text-gray);
+  outline: 1px solid var(--gray-200);
   padding: 0.2rem 0.4rem;
 }
 input:focus, select:focus {
-  outline: 2px solid var(--bg-blue);
+  outline: 2px solid var(--blue-200);
 }
 
 input.error, select.error {
