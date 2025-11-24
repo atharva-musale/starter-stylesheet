@@ -99,6 +99,9 @@ h3 {
 /* navbar */
 header {
   background-color: var(--accent);
+  border-bottom: 1px solid var(--black);
+
+  display: flow-root;
 }
 
 .logo {
@@ -121,8 +124,7 @@ nav {
   text-transform: uppercase;
 
   width: min(80rem, 90%);
-  padding: 1.5rem;
-  margin: auto;
+  margin: 1.5rem auto;
 }
 
 nav ul {
@@ -204,11 +206,11 @@ nav li a:hover::after {
 /* form elements */
 input, select {
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-family: var(--font-raleway);
   border-radius: 0.3rem;
   outline: 1px solid var(--gray-200);
-  padding: 0.2rem 0.4rem;
+  padding: 0.5rem 1rem;
 }
 input:focus, select:focus {
   outline: 2px solid var(--blue-200);
@@ -225,16 +227,19 @@ input.error, select.error {
 }
 
 .form-item label {
+  font-family: var(--font-raleway);
+  font-size: 1.5rem;
   flex-basis: 15%;
 }
 
 .form-item input, .form-item select {
-  width: 25rem;
+  width: 40rem;
 }
 
 .validation-error {
+  font-family: var(--font-raleway);
   color: var(--error);
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-left: 15%;
   margin-top: -1rem;
 }
